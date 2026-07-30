@@ -85,8 +85,10 @@
 \makeatletter
 \setbeamertemplate{headline}{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=0.4cm,dp=0cm]{titanblue}%
+    \pgfmathsetmacro{\CSUFProgressRatio}{\insertframenumber/\inserttotalframenumber}%
+    \pgfmathsetlengthmacro{\CSUFProgressWidth}{\paperwidth*\CSUFProgressRatio}%
     \begin{tikzpicture}
-      \fill[titanorange] (0,0) rectangle (\the\paperwidth*\insertframenumber/\inserttotalframenumber,0.4cm);
+      \fill[titanorange] (0,0) rectangle (\CSUFProgressWidth,0.4cm);
     \end{tikzpicture}%
   \end{beamercolorbox}%
 }
